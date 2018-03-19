@@ -1,6 +1,8 @@
 <template>
   <v-toolbar>
+      <v-spacer></v-spacer>
       {{title}}
+      <v-spacer></v-spacer>
   </v-toolbar>
 </template>
 
@@ -8,7 +10,7 @@
     export default{
         data () {
             return {
-                title: 'Harrison Phung & Anna Tran'
+                title: 'Harrison Phung & Anna Tran Wedding Website',
             }
         }
     }

@@ -2,20 +2,21 @@
   <div id="app">
     <toolbar></toolbar>
     <countdown :date=date></countdown>
+
+
+    <div>
     <img src="./assets/wedding-portrait.jpg">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    </div>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 import toolbar from './components/Toolbar.vue'
 import countdown from './components/Countdown.vue'
 
 export default {
   name: 'app',
   components: {
-    // HelloWorld,
     toolbar,
     countdown
   },
@@ -34,11 +35,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  background-color: #B7C2D8;
 }
 img{
-  max-width:100%;
-  max-height:100%;
+  max-width:80%;
+  max-height:80%;
 
 }
 </style>

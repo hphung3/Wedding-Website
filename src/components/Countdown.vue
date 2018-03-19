@@ -1,11 +1,14 @@
 <template>
-    <div>
-     <div> {{days}} DAYS</div>
-     <div> {{hours}} HOURS</div>
-     <div> {{minutes}} MINUTES</div>
-     <div> {{seconds}} SECONDS</div>
+    <div class="grid-container">
+        <div>DAYS</div>
+        <div>HOURS</div>
+        <div>MINUTES</div>
+        <div>SECONDS</div>
+        <div> {{days}} </div>      
+        <div> {{hours}}</div>
+        <div> {{minutes}}</div>
+        <div> {{seconds}}</div>
     </div>
-    <!-- <div>{{date}}</div> -->
 </template>
 
 <script>
@@ -39,5 +42,16 @@ export default {
       },
   }
 }
-
 </script>
+
+<style scoped>
+    .grid-container{
+        padding-top: 1%;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: 30px 1fr;
+        height: 100px;
+    }
+
+
+</style>

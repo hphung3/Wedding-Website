@@ -1,14 +1,16 @@
 <template>
+
     <div class="grid-container">
-        <div>DAYS</div>
-        <div>HOURS</div>
-        <div>MINUTES</div>
-        <div>SECONDS</div>
-        <div> {{days}} </div>      
-        <div> {{hours}}</div>
-        <div> {{minutes}}</div>
-        <div> {{seconds}}</div>
+        <div class="header">DAYS</div>
+        <div class="header">HOURS</div>
+        <div class="header">MINUTES</div>
+        <div class="header">SECONDS</div>
+        <div class="number"> {{days | doubleDigit}} </div>      
+        <div class="number"> {{hours | doubleDigit}}</div>
+        <div class="number"> {{minutes | doubleDigit}}</div>
+        <div class="number"> {{seconds | doubleDigit}}</div>
     </div>
+
 </template>
 
 <script>
@@ -40,6 +42,15 @@ export default {
       seconds: function() {
         return (this.weddingDay - this.now) % 60
       },
+  },
+  filters: {
+      doubleDigit: function(value){
+          if(value < 10){
+              return '0'+value.toString()
+          }else{
+              return value
+          }
+      }
   }
 }
 </script>
@@ -48,10 +59,21 @@ export default {
     .grid-container{
         padding-top: 1%;
         display: grid;
-        grid-template-columns: auto auto auto auto;
+        padding-left: 15%;
+        padding-right:15%;
+        grid-template-columns: repeat(4,25%);
         grid-template-rows: 30px 1fr;
-        height: 100px;
+        height: 60%;
+
     }
 
+    .header{
+        font-size: 1em;
+    }
+    .number{
+        background-color: #D0D0D0;
+        font-size: 2.5em;
+        padding: 10% 5%;
+    }
 
 </style>

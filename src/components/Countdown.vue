@@ -1,5 +1,4 @@
 <template>
-
     <div class="grid-container">
         <div class="header">DAYS</div>
         <div class="header">HOURS</div>
@@ -28,7 +27,7 @@ export default {
   },
   created () {
       setInterval(() => {this.now = Math.trunc((new Date().getTime() / 1000))}, 1000)
-},
+  },
   computed:{
       days: function() {
         return Math.trunc(((this.weddingDay - this.now) / 60 / 60 / 24 ))
@@ -56,24 +55,33 @@ export default {
 </script>
 
 <style scoped>
+    @import url('https://fonts.googleapis.com/css?family=Ultra');
     .grid-container{
-        padding-top: 1%;
         display: grid;
-        padding-left: 15%;
-        padding-right:15%;
+
+        padding-top: 1%;
+        padding-left: 10%;
+        padding-right:10%;
+        margin-bottom: 2%;
+
         grid-template-columns: repeat(4,25%);
         grid-template-rows: 30px 1fr;
-        height: 60%;
 
+        height: 60%;
+        font-family: 'Ultra', serif;
     }
 
     .header{
+        padding-top: 3%;
         font-size: 1em;
     }
     .number{
+        border-radius: 10%;
         background-color: #D0D0D0;
         font-size: 2.5em;
         padding: 10% 5%;
+        margin: 0 5%;
+        font-family: 'Ultra', serif;
     }
 
 </style>

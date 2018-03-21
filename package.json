@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "vue": "^2.5.13",
+    "vue-carousel": "^0.6.9",
     "vuetify": "^1.0.8"
   },
   "devDependencies": {

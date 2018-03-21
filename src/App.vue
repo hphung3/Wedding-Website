@@ -2,18 +2,8 @@
   <div id="app">
     <toolbar></toolbar>
     <countdown :date=date></countdown>
+    <photoslide></photoslide>
 
-    <br>
-
-    <div>
-    <img src='./assets/wedding-portrait.jpg'>
-    </div>
-
-    <!-- <photoslide></photoslide> -->
-
-      <v-carousel>
-    <v-carousel-item v-for="(item,i) in images" :src="item.path" :key="i"></v-carousel-item>
-  </v-carousel>
   </div>
 </template>
 
@@ -31,17 +21,7 @@ export default {
   },
   data () {
     return {
-      date: 'May 27, 2018',
-      images: [
-          {
-            id: 'portrait',
-            path: './assets/wedding-portrait.jpg'
-          },
-          {
-            id: 'charity-dinner',
-            path: 'https://vuetifyjs.com/static/doc-images/carousel/squirrel.jpg'
-          }
-        ]
+      date: 'May 27, 2018'
     }
   }
 }

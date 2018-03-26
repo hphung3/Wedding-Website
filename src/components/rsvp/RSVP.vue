@@ -20,26 +20,32 @@
 
 
       <v-form class="v-form">
-      <!-- <input type="text" placeholder="Name"> -->
       <v-text-field :class="name" label="Full Name" v-model="name"></v-text-field>
       <v-text-field 
-        :class="number-of-guests" 
+        class="number-of-guests" 
         label="# of Guests (including yourself)" 
         v-model="numberOfGuests">
       </v-text-field>
-          <v-checkbox
-      :label="`Ceremony`"
-      v-model="ceremonyCheckBox"
-    ></v-checkbox>
-        <v-checkbox
-      :label="`Reception`"
-      v-model="receptionCheckBox"
-    ></v-checkbox>
-    </v-form>
-    </div>
 
-    <button class ="accept">Accept</button>
-    <button class ="regret">Regret</button>
+      <label>I can attend:</label>
+      <v-checkbox
+      :label="`Both Ceremony and Reception`"
+      v-model="ceremonyAndReceptionCheckBox">
+      </v-checkbox>
+      <v-checkbox
+      :label="`Reception Only`"
+      v-model="receptionCheckBox">
+      </v-checkbox>
+      <v-checkbox
+      :label="`Regretfully Declines`"
+      v-model="declineCheckBox">
+      </v-checkbox>
+    </v-form>
+      
+    <div class="response-button-group">
+      <button class ="accept">Submit</button>
+    </div>
+    </div>
 
   </div>
 </body>
@@ -57,8 +63,9 @@ export default {
     return {
       name: '',
       numberOfGuests: '',
-      ceremonyCheckBox: false,
-      receptionCheckBox: false
+      ceremonyAndReceptionCheckBox: false,
+      receptionCheckBox: false,
+      declineCheckBox: false
     };
   }
 };
@@ -66,15 +73,19 @@ export default {
 
 
 <style>
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 html,
 body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #bdc3c7;
+  background-color: #E0E0E0;
   font-family: "Raleway";
 }
+
 .top {
   background-color: #B7C2D8;
   height: 200px;
@@ -84,7 +95,6 @@ body {
 }
 
 .form {
-  /* height: 590px; */
   width: 420px;
   background-color: #fff;
   margin: -110px auto;
@@ -125,31 +135,27 @@ input:focus {
   outline: 0;
 }
 
-.button button {
-  display: inline-block;
-  width: 400px;
-}
 button {
   color: #666;
-  background-color: #ffbdc7;
   border: none;
   font-family: "Raleway";
   font-size: 18px;
   font-weight: 600;
   padding: 15px 32px;
-  width: 200px;
+  width: fill;
   margin: 20px auto;
   float: left;
 }
 
+.response-button-group{
+  display: flex;
+  margin: 0px auto;
+  width: 100%;
+}
 button.accept {
   border-radius: 10px;
-  border-right: solid 1px #cc919a;
-  margin-left: auto;
-}
-
-button.regret {
-  border-radius: 10px;
+  background-color: #E0E0E0;
+  margin: 0px 5px;
 }
 
 button:hover {
@@ -161,7 +167,12 @@ button:focus {
   outline: 0;
 }
 
-v-form {
+label{
+  display: block;
+  margin-bottom: 10px;
+}
+
+.v-form {
   width: 85%;
   margin: 20px auto;
 }

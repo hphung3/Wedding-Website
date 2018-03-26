@@ -3,10 +3,6 @@
     <toolbar></toolbar>
     <countdown :date=date></countdown>
     <photoslide></photoslide>
-
-
-    <!-- <music></music> -->
-
   </div>
 </template>
 

@@ -19,16 +19,27 @@
       <p class= "line">________________________________________</p>
 
 
-    <v-form class="v-form">
-    <!-- <input type="text" placeholder="Name"> -->
-    <v-text-field :class="name" label="Name" v-model="name"></v-text-field>
-    <input type="number" placeholder="# of Guests">
+      <v-form class="v-form">
+      <!-- <input type="text" placeholder="Name"> -->
+      <v-text-field :class="name" label="Full Name" v-model="name"></v-text-field>
+      <v-text-field 
+        :class="number-of-guests" 
+        label="# of Guests (including yourself)" 
+        v-model="numberOfGuests">
+      </v-text-field>
+          <v-checkbox
+      :label="`Ceremony`"
+      v-model="ceremonyCheckBox"
+    ></v-checkbox>
+        <v-checkbox
+      :label="`Reception`"
+      v-model="receptionCheckBox"
+    ></v-checkbox>
     </v-form>
     </div>
 
     <button class ="accept">Accept</button>
     <button class ="regret">Regret</button>
-
 
   </div>
 </body>
@@ -37,9 +48,17 @@
 
 <script>
 export default {
+  metaInfo: {
+    link: [
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+    ]
+  },
   data() {
     return {
-      name: ''
+      name: '',
+      numberOfGuests: '',
+      ceremonyCheckBox: false,
+      receptionCheckBox: false
     };
   }
 };
@@ -65,7 +84,7 @@ body {
 }
 
 .form {
-  height: 590px;
+  /* height: 590px; */
   width: 420px;
   background-color: #fff;
   margin: -110px auto;
@@ -77,6 +96,7 @@ body {
 
 .info {
   padding: 10px;
+  height: auto;
 }
 
 h1,
@@ -118,17 +138,18 @@ button {
   font-weight: 600;
   padding: 15px 32px;
   width: 200px;
-  margin: 20px auto 0px auto;
+  margin: 20px auto;
   float: left;
 }
 
 button.accept {
-  border-radius: 0px 0px 0px 10px;
+  border-radius: 10px;
   border-right: solid 1px #cc919a;
+  margin-left: auto;
 }
 
 button.regret {
-  border-radius: 0px 0px 10px 0px;
+  border-radius: 10px;
 }
 
 button:hover {

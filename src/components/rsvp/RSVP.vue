@@ -20,24 +20,30 @@
 
 
       <v-form class="v-form">
-      <v-text-field :class="name" label="Full Name" v-model="name"></v-text-field>
+      <v-text-field 
+        :class="name" 
+        label="Full Name" 
+        v-model="name"
+        value="Input text"
+        ></v-text-field>
+
       <v-text-field 
         class="number-of-guests" 
         label="# of Guests (including yourself)" 
         v-model="numberOfGuests">
       </v-text-field>
 
-      <label>I can attend:</label>
+      <label>Choose an option:</label>
       <v-checkbox
-      :label="`Both Ceremony and Reception`"
+      :label="`happily accepts (both ceremony and reception)`"
       v-model="ceremonyAndReceptionCheckBox">
       </v-checkbox>
       <v-checkbox
-      :label="`Reception Only`"
+      :label="`happily accepts (reception only)`"
       v-model="receptionCheckBox">
       </v-checkbox>
       <v-checkbox
-      :label="`Regretfully Declines`"
+      :label="`regretfully declines`"
       v-model="declineCheckBox">
       </v-checkbox>
     </v-form>
@@ -61,7 +67,7 @@ export default {
   },
   methods:{
       goHome: function () {
-        //TODO: do a call to backend
+        //TODO: do a call to backend and validate
           window.location.href = '/'
       }
   },
@@ -95,13 +101,14 @@ body {
 .top {
   background-color: #B7C2D8;
   height: 200px;
+  width: 100%;
   margin: 0;
   padding: 0;
   box-shadow: 2px 2px 4px rgb(0, 0, 0, 0.25);
 }
 
 .form {
-  width: 420px;
+  width: 450px;
   background-color: #fff;
   margin: -110px auto;
   border-radius: 10px;
@@ -180,6 +187,15 @@ label{
 
 .v-form {
   width: 85%;
-  margin: 20px auto;
+  margin: 0px 10px;
 }
+
+.input-group label{
+  font-size: 15px;
+  max-width: 100%
+}
+.input-group.input-group--selection-controls label{
+    max-width: 100%
+}
+
 </style>

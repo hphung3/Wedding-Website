@@ -43,7 +43,7 @@
     </v-form>
       
     <div class="response-button-group">
-      <button class ="accept">Submit</button>
+      <button class ="accept" @click="goHome">Submit</button>
     </div>
     </div>
 
@@ -58,6 +58,12 @@ export default {
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
+  },
+  methods:{
+      goHome: function () {
+        //TODO: do a call to backend
+          window.location.href = '/'
+      }
   },
   data() {
     return {

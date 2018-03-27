@@ -3,7 +3,7 @@
       <span id="title">{{title}}</span>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-      <v-btn flat class="rsvp">RSVP</v-btn>
+      <v-btn flat class="rsvp" v-on:click="this.goToRsvp">RSVP</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
@@ -14,6 +14,11 @@
             link: [
              { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
            ]
+        },
+        methods:{
+            goToRsvp: function () {
+                window.location.href = '/rsvp'
+            }
         },
         data () {
             return {

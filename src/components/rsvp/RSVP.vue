@@ -62,19 +62,23 @@
 export default {
   metaInfo: {
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
+      }
     ]
   },
-  methods:{
-      goHome: function () {
-        //TODO: do a call to backend and validate
-          window.location.href = '/'
-      }
+  methods: {
+    goHome: function() {
+      //TODO: do a call to backend and validate
+      window.location.href = "/";
+    }
   },
   data() {
     return {
-      name: '',
-      numberOfGuests: '',
+      name: "",
+      numberOfGuests: "",
       ceremonyAndReceptionCheckBox: false,
       receptionCheckBox: false,
       declineCheckBox: false
@@ -84,9 +88,8 @@ export default {
 </script>
 
 
-<style>
-
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 html,
 body {
@@ -94,12 +97,12 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
   font-family: "Raleway";
 }
 
 .top {
-  background-color: #B7C2D8;
+  background-color: #b7c2d8;
   height: 200px;
   width: 100%;
   margin: 0;
@@ -160,14 +163,14 @@ button {
   float: left;
 }
 
-.response-button-group{
+.response-button-group {
   display: flex;
   margin: 0px auto;
   width: 100%;
 }
 button.accept {
   border-radius: 10px;
-  background-color: #E0E0E0;
+  background-color: #e0e0e0;
   margin: 0px 5px;
 }
 
@@ -180,7 +183,7 @@ button:focus {
   outline: 0;
 }
 
-label{
+label {
   display: block;
   margin-bottom: 10px;
 }
@@ -190,12 +193,11 @@ label{
   margin: 0px 10px;
 }
 
-.input-group label{
+.input-group label {
   font-size: 15px;
-  max-width: 100%
+  max-width: 100%;
 }
-.input-group.input-group--selection-controls label{
-    max-width: 100%
+.input-group.input-group--selection-controls label {
+  max-width: 100%;
 }
-
 </style>

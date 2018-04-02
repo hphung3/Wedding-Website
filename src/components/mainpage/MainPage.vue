@@ -34,10 +34,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-img{
-  max-width:80%;
-  max-height:80%;
-}
+
 html, body {
     margin: 0;
     height: 100%;

@@ -8,6 +8,7 @@
 
 
 <script>
+/*eslint-disable */
 import { Carousel, Slide } from 'vue-carousel';
 
 export default {

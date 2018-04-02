@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-// import mainpage from './components/mainpage/MainPage.vue'
+import mainpage from './components/mainpage/MainPage.vue'
 import rsvp from './components/rsvp/RSVP.vue'
 import App from './App.vue'
 import Meta from 'vue-meta'
@@ -30,15 +30,11 @@ Vue.use(VueRouter)
 //   render (h) { return h(this.ViewComponent) }
 // })
 
-const Home = { template: '<div>Home</div>'}
-const About = { template: '<div>About</div>'}
-
 
 const routes = [
   // { path: '/rsvp', component: rsvp},
   // { path: '/mainpage', component: mainpage},
-  { path: '/', component: Home},
-  { path: '/about', component: About},
+  { path: '/', component: mainpage},
   { path: '/rsvp', component: rsvp}
 ]
 

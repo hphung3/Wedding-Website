@@ -1,13 +1,7 @@
 <template>
   <div id="app">
     <toolbar></toolbar>
-    <countdown :date=date></countdown>
-    <photoslide></photoslide>
-
-    <router-link to="/">Go to Foo</router-link>
-    <router-link to="/about">Go to About</router-link>
-    <router-link to="/rsvp">Go to RSVP</router-link>
-
+    
     <router-view></router-view>
   </div>
 </template>

@@ -3,7 +3,9 @@
       <span id="title">{{title}}</span>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-      <v-btn flat class="rsvp" v-on:click="this.goToRsvp">RSVP</v-btn>
+      <router-link to="/rsvp">
+        <v-btn flat class="rsvp">RSVP</v-btn>
+      </router-link>
     </v-toolbar-items>
   </v-toolbar>
 </template>
@@ -18,11 +20,6 @@ export default {
           "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons"
       }
     ]
-  },
-  methods: {
-    goToRsvp: function() {
-      window.location.href = "/rsvp";
-    }
   },
   data() {
     return {

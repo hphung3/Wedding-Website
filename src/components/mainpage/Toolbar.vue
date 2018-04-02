@@ -3,7 +3,7 @@
       <span id="title">{{title}}</span>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-      <router-link to="/rsvp">
+      <router-link to="/rsvp" id="rsvp">
         <v-btn flat class="rsvp">RSVP</v-btn>
       </router-link>
     </v-toolbar-items>
@@ -32,6 +32,7 @@ export default {
 <style scoped>
 .toolbar {
   background: #e0e0e0;
+  min-width: 500px;
 }
 
 #title {
@@ -39,7 +40,20 @@ export default {
 }
 .rsvp {
   font-weight: 700;
-  font-size: 200%;
+  font-size: 180%;
   letter-spacing: 1px;
+  padding: 10px 0px;
+  color: black;
+  text-decoration: none;
 }
+
+li a {
+  text-decoration: none;
+}
+
+#rsvp{
+  height: fill;
+  text-decoration: none;
+}
+
 </style>

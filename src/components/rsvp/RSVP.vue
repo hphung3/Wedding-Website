@@ -9,10 +9,13 @@
     <h1>Anna Tran & Harrison Phung</h1>
       <p class= "line">________________________________________</p>
       <p>Sunday, May 27, 2018</p>
+      <br>
       <p>5:00 PM</p>
       <h2>Ceremony</h2>
       <p>The Factory Atlanta</p>
       <p>5616 New Peachtree Rd, Chamblee, GA 30341</p>
+      <br>
+      <p>6:00 PM</p>
       <h2>Reception</h2>
       <p>Canton House</p>
       <p>4825 Buford Hwy NE, Chamblee, GA 30341</p>
@@ -94,7 +97,7 @@ export default {
 html,
 body {
   height: 100%;
-  width: 100%;
+  min-width: 500px;
   margin: 0;
   padding: 0;
   background-color: #e0e0e0;
@@ -123,6 +126,7 @@ body {
 .info {
   padding: 10px;
   height: auto;
+  width: auto;
 }
 
 h1,

@@ -52,7 +52,7 @@
     </v-form>
       
     <div class="response-button-group">
-      <button class ="accept" @click="goHome">Submit</button>
+      <button class ="accept" @click="submitAndGoHome">Submit</button>
     </div>
     </div>
 
@@ -62,6 +62,10 @@
 
 
 <script>
+import axios from 'axios'
+
+axios.defaults.crossDomain = true;
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 export default {
   metaInfo: {
     link: [
@@ -73,9 +77,21 @@ export default {
     ]
   },
   methods: {
-    goHome: function() {
+    submitAndGoHome: function() {
       //TODO: do a call to backend and validate
-      window.location.href = "/";
+      axios
+        .post(this.rsvpUrl, {
+          fullName: this.name,
+          numberOfGuests: this.numberOfGuests,
+          acceptance: "this is a test"
+      })
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+      // window.location.href = "/";
     }
   },
   data() {
@@ -84,7 +100,9 @@ export default {
       numberOfGuests: "",
       ceremonyAndReceptionCheckBox: false,
       receptionCheckBox: false,
-      declineCheckBox: false
+      declineCheckBox: false,
+      rsvpUrl:
+        "http://node-express-env.mxwzqw3mfp.us-east-2.elasticbeanstalk.com/rsvp"
     };
   }
 };

@@ -36,7 +36,7 @@ export default {
 }
 
 #title {
-  font-size: 130%;
+  font-size: 80%;
 }
 .rsvp {
   font-weight: 700;
@@ -44,10 +44,6 @@ export default {
   letter-spacing: 1px;
   padding: 10px 0px;
   color: black;
-  text-decoration: none;
-}
-
-li a {
   text-decoration: none;
 }
 

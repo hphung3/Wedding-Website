@@ -39,11 +39,11 @@
 
       <label>Choose an option:</label>
       <v-checkbox
-      :label="`happily accepts (both ceremony and reception)`"
+      :label="`accepts (both ceremony and reception)`"
       v-model="ceremonyAndReceptionCheckBox">
       </v-checkbox>
       <v-checkbox
-      :label="`happily accepts (reception only)`"
+      :label="`accepts (reception only)`"
       v-model="receptionCheckBox">
       </v-checkbox>
       <v-checkbox
@@ -233,18 +233,13 @@ button:focus {
 label {
   display: block;
   margin-bottom: 10px;
+  float: left;
 }
 
 .v-form {
-  width: 85%;
-  margin: 0px 10px;
+  width: 100%;
+  margin: 0px 0px 0px 10px;
 }
 
-.input-group label {
-  font-size: 15px;
-  max-width: 100%;
-}
-.input-group.input-group--selection-controls label {
-  max-width: 100%;
-}
+
 </style>

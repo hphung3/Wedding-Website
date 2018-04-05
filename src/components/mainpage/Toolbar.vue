@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      title: "Harrison Phung & Anna Tran Wedding Website"
+      title: "Anna Tran & Harrison Phung"
     };
   }
 };
@@ -36,7 +36,8 @@ export default {
 }
 
 #title {
-  font-size: 80%;
+  font-size: 100%;
+  width: 100px;
 }
 .rsvp {
   font-weight: 700;
@@ -48,8 +49,9 @@ export default {
 }
 
 #rsvp{
-  height: fill;
+  height: auto;
   text-decoration: none;
+  align-content: center
 }
 
 </style>

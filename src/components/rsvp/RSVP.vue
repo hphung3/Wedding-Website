@@ -1,3 +1,4 @@
+
 <template>
   <body>
   <div class="top">
@@ -62,10 +63,11 @@
 
 
 <script>
-import axios from 'axios'
+/* eslint-disable */
+import axios from "axios";
 
 axios.defaults.crossDomain = true;
-axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post["Content-Type"] = "application/json";
 export default {
   metaInfo: {
     link: [
@@ -80,18 +82,36 @@ export default {
     submitAndGoHome: function() {
       //TODO: do a call to backend and validate
       axios
-        .post(this.rsvpUrl, {
-          fullName: this.name,
-          numberOfGuests: this.numberOfGuests,
-          acceptance: "this is a test"
-      })
+        .post(this.rsvpUrl, this.rsvpRequest)
         .then(function(response) {
-          console.log(response);
+          window.location.href = "/";
         })
         .catch(function(error) {
           console.log(error);
         });
-      // window.location.href = "/";
+    }
+  },
+  watch: {
+    name: function(val, oldVal) {
+      this.rsvpRequest.fullName = val;
+    },
+    numberOfGuests: function(val, oldVal) {
+      this.rsvpRequest.numberOfGuests = val;
+    },
+    ceremonyAndReceptionCheckBox: function(val, oldVal) {
+      if (val == true) {
+        this.rsvpRequest.acceptance = "Ceremony And Reception";
+      }
+    },
+    receptionCheckBox: function(val, oldVal) {
+      if (val == true) {
+        this.rsvpRequest.acceptance = "Reception Only";
+      }
+    },
+    declineCheckBox: function(val, oldVal) {
+      if (val == true) {
+        this.rsvpRequest.acceptance = "Regretfully Declines";
+      }
     }
   },
   data() {
@@ -101,8 +121,13 @@ export default {
       ceremonyAndReceptionCheckBox: false,
       receptionCheckBox: false,
       declineCheckBox: false,
+      rsvpRequest:{
+        fullName: "",
+        numberOfGuests: "",
+        acceptance: "",
+      },
       rsvpUrl:
-        "http://node-express-env.mxwzqw3mfp.us-east-2.elasticbeanstalk.com/rsvp"
+        "http://wedding-website-backend.mxwzqw3mfp.us-east-2.elasticbeanstalk.com/rsvp"
     };
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav class="toolbar">
     <v-toolbar class="hidden-sm-and-down">
         <router-link to="/">
           <v-toolbar-title class="title">{{title}}</v-toolbar-title>
@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style scoped>
+nav{
+  width: fill;
+}
 a {
   text-decoration: none;
   color: black;
@@ -56,10 +59,6 @@ a {
   color: black;
 }
 
-.toolbar {
-  background: #e0e0e0;
-  min-width: 500px;
-}
 
 .title {
   font-size: 100%;
@@ -93,6 +92,10 @@ a {
 
 .card__text {
   padding-left: 25px;
+}
+
+.toolbar{
+  width: auto;
 }
 
 </style>

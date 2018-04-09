@@ -36,5 +36,7 @@ body {
   margin: 0;
   height: 100%;
   background-color: #b7c2d8;
+  width: auto;
 }
+
 </style>

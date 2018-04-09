@@ -171,7 +171,7 @@ export default {
 html,
 body {
   height: 100%;
-  min-width: 500px;
+
   margin: 0;
   padding: 0;
   background-color: #e0e0e0;
@@ -188,9 +188,8 @@ body {
 }
 
 .form {
-  width: 450px;
   background-color: #fff;
-  margin: -110px auto;
+  margin: -150px 15px 0px 15px;
   border-radius: 10px;
   color: #666;
   padding: 0px 0px;
@@ -200,7 +199,7 @@ body {
 .info {
   padding: 10px;
   height: auto;
-  width: auto;
+  /* width: auto; */
 }
 
 h1,

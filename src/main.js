@@ -6,36 +6,18 @@ import rsvp from './components/rsvp/RSVP.vue'
 import App from './App.vue'
 import Meta from 'vue-meta'
 import VueRouter from 'vue-router'
+import engagement from './components/engagement/Engagement.vue'
 
 Vue.config.productionTip = false
 Vue.use(Vuetify)
 Vue.use(Meta)
 Vue.use(VueRouter)
 
-// const routes = {
-//   '/': mainpage,
-//   '/rsvp': rsvp
-// }
-
-// new Vue({
-//   el: '#app',
-//   data: {
-//     currentRoute: window.location.pathname
-//   },
-//   computed: {
-//     ViewComponent () {
-//       return routes[this.currentRoute]
-//     }
-//   },
-//   render (h) { return h(this.ViewComponent) }
-// })
-
 
 const routes = [
-  // { path: '/rsvp', component: rsvp},
-  // { path: '/mainpage', component: mainpage},
   { path: '/', component: mainpage},
-  { path: '/rsvp', component: rsvp}
+  { path: '/rsvp', component: rsvp},
+  { path: '/engagement', component: engagement}
 ]
 
 const router = new VueRouter({

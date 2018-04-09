@@ -6,9 +6,13 @@
         </router-link>
         <v-spacer></v-spacer>
         <v-toolbar-items>
+          <router-link to="/engagement" id="engagement">
+            <v-btn flat class="engagement-video">Engagement</v-btn>
+          </router-link>
           <router-link to="/rsvp" id="rsvp">
             <v-btn flat class="rsvp">RSVP</v-btn>
           </router-link>
+
       </v-toolbar-items>
     </v-toolbar>
 
@@ -16,6 +20,11 @@
       <v-expansion-panel>
         <v-expansion-panel-content>
           <div slot="header"><router-link to="/">{{title}}</router-link></div>
+          <v-card>
+          <router-link to="/engagement" id="engagement">
+              <v-card-text class="rsvp-sm">Engagement</v-card-text>
+            </router-link>
+          </v-card>
           <v-card>
             <router-link to="/rsvp" id="rsvp">
               <v-card-text class="rsvp-sm">RSVP</v-card-text>
@@ -38,7 +47,7 @@ export default {
       }
     ]
   },
-  data() {
+  data () {
     return {
       title: "Anna Tran & Harrison Phung"
     };
@@ -59,7 +68,6 @@ a {
   color: black;
 }
 
-
 .title {
   font-size: 100%;
   color: black;
@@ -74,13 +82,21 @@ a {
   text-decoration: none;
 }
 
+.engagement-video {
+  font-weight: 700;
+  font-size: 180%;
+  padding: 10px 0px;
+  color: black;
+  text-decoration: none;
+}
+
 .rsvp-sm {
   letter-spacing: 1px;
   color: black;
   text-decoration: none;
 }
 
-#rsvp {
+#rsvp, #engagement {
   height: auto;
   text-decoration: none;
   align-content: center

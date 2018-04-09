@@ -91,7 +91,12 @@ export default {
   },
   methods: {
     submitAndGoHome: function() {
+        if(!this.rsvpRequest.fullName || !this.rsvpRequest.numberOfGuests || !this.rsvpRequest.acceptance){
+          alert("Please fill in Required fields :)")
+          return
+        }
       //TODO: do a call to backend and validate
+
       axios
         .post(this.rsvpUrl, this.rsvpRequest)
         .then(function(response) {

@@ -24,19 +24,29 @@
 
 
       <v-form class="v-form">
-      <v-text-field 
-        :class="name" 
-        label="Full Name" 
-        v-model="name"
-        value="Input text"
-        :rules="[rules.required]"
-        ></v-text-field>
+        <div id = "full-name">
+          <v-text-field 
+            class="input-group--focused"
+            label="Full Name" 
+            v-model="name"
+            value="Input text"
+            required
+            :rules="[rules.required]"
+            ></v-text-field>
+        </div>
 
+    <div id='number-of-guests'>
       <v-text-field 
-        class="number-of-guests" 
+        class="input-group--focused"
         label="# of Guests (including yourself)" 
+        value="Input tfwafwfext"
+        :rules="[rules.required]"
+        required
         v-model="numberOfGuests">
       </v-text-field>
+      </div>
+
+      <br>
 
       <label>Choose an option:</label>
       <v-checkbox
@@ -101,22 +111,22 @@ export default {
     },
     ceremonyAndReceptionCheckBox: function(val, oldVal) {
       if (val == true) {
-        this.receptionCheckBox = false
-        this.declineCheckBox = false
+        this.receptionCheckBox = false;
+        this.declineCheckBox = false;
         this.rsvpRequest.acceptance = "Ceremony And Reception";
       }
     },
     receptionCheckBox: function(val, oldVal) {
       if (val == true) {
-        this.ceremonyAndReceptionCheckBox = false
-        this.declineCheckBox = false
+        this.ceremonyAndReceptionCheckBox = false;
+        this.declineCheckBox = false;
         this.rsvpRequest.acceptance = "Reception Only";
       }
     },
     declineCheckBox: function(val, oldVal) {
       if (val == true) {
-        this.receptionCheckBox = false
-        this.ceremonyAndReceptionCheckBox = false
+        this.receptionCheckBox = false;
+        this.ceremonyAndReceptionCheckBox = false;
         this.rsvpRequest.acceptance = "Regretfully Declines";
       }
     }
@@ -128,17 +138,16 @@ export default {
       ceremonyAndReceptionCheckBox: false,
       receptionCheckBox: false,
       declineCheckBox: false,
-      rsvpRequest:{
+      rsvpRequest: {
         fullName: "",
         numberOfGuests: "",
-        acceptance: "",
+        acceptance: ""
       },
       rsvpUrl:
         "http://wedding-website-backend.mxwzqw3mfp.us-east-2.elasticbeanstalk.com/rsvp",
       rules: {
-        required: (value) => !!value || 'Required Field'
+        required: value => !!value || "Required Field"
       }
-
     };
   }
 };
@@ -252,5 +261,7 @@ label {
   margin: 0px 0px 0px 10px;
 }
 
-
+#full-name, #number-of-guests{
+  width: 95%
+}
 </style>

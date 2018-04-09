@@ -119,6 +119,8 @@ export default {
         this.receptionCheckBox = false;
         this.declineCheckBox = false;
         this.rsvpRequest.acceptance = "Ceremony And Reception";
+      } else{
+        this.rsvpRequest.acceptance = ""
       }
     },
     receptionCheckBox: function(val, oldVal) {
@@ -126,6 +128,8 @@ export default {
         this.ceremonyAndReceptionCheckBox = false;
         this.declineCheckBox = false;
         this.rsvpRequest.acceptance = "Reception Only";
+      } else{
+        this.rsvpRequest.acceptance = ""
       }
     },
     declineCheckBox: function(val, oldVal) {
@@ -133,6 +137,8 @@ export default {
         this.receptionCheckBox = false;
         this.ceremonyAndReceptionCheckBox = false;
         this.rsvpRequest.acceptance = "Regretfully Declines";
+      } else{
+        this.rsvpRequest.acceptance = ""
       }
     }
   },

@@ -29,6 +29,7 @@
         label="Full Name" 
         v-model="name"
         value="Input text"
+        :rules="[rules.required]"
         ></v-text-field>
 
       <v-text-field 
@@ -100,16 +101,22 @@ export default {
     },
     ceremonyAndReceptionCheckBox: function(val, oldVal) {
       if (val == true) {
+        this.receptionCheckBox = false
+        this.declineCheckBox = false
         this.rsvpRequest.acceptance = "Ceremony And Reception";
       }
     },
     receptionCheckBox: function(val, oldVal) {
       if (val == true) {
+        this.ceremonyAndReceptionCheckBox = false
+        this.declineCheckBox = false
         this.rsvpRequest.acceptance = "Reception Only";
       }
     },
     declineCheckBox: function(val, oldVal) {
       if (val == true) {
+        this.receptionCheckBox = false
+        this.ceremonyAndReceptionCheckBox = false
         this.rsvpRequest.acceptance = "Regretfully Declines";
       }
     }
@@ -127,7 +134,11 @@ export default {
         acceptance: "",
       },
       rsvpUrl:
-        "http://wedding-website-backend.mxwzqw3mfp.us-east-2.elasticbeanstalk.com/rsvp"
+        "http://wedding-website-backend.mxwzqw3mfp.us-east-2.elasticbeanstalk.com/rsvp",
+      rules: {
+        required: (value) => !!value || 'Required Field'
+      }
+
     };
   }
 };

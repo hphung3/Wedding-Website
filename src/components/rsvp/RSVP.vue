@@ -69,6 +69,16 @@
     </div>
 
   </div>
+
+      <v-snackbar
+      :timeout="timeout"
+      :top="top"
+      v-model="snackbar">
+      {{ snackText }}
+      <v-btn flat color="pink" @click.native="snackbar = false">Close</v-btn>
+    </v-snackbar>
+
+    
 </body>
 </template>
 
@@ -95,14 +105,14 @@ export default {
           alert("Please fill in Required fields :)")
           return
         }
-      //TODO: do a call to backend and validate
-
       axios
         .post(this.rsvpUrl, this.rsvpRequest)
         .then(function(response) {
+          alert("SUCCESSFUL RSVP!")
           window.location.href = "/";
         })
         .catch(function(error) {
+          alert("ERROR OCCURED")
           console.log(error);
         });
     }
@@ -149,6 +159,10 @@ export default {
       ceremonyAndReceptionCheckBox: false,
       receptionCheckBox: false,
       declineCheckBox: false,
+      snackbar: false,
+      snackText: 'Hello, I\'m a snackbar',
+      timeout: 2000,
+      top: true,
       rsvpRequest: {
         fullName: "",
         numberOfGuests: "",
@@ -158,7 +172,9 @@ export default {
         "http://wedding-website-backend.mxwzqw3mfp.us-east-2.elasticbeanstalk.com/rsvp",
       rules: {
         required: value => !!value || "Required Field"
-      }
+      },
+
+
     };
   }
 };
@@ -189,7 +205,7 @@ body {
 
 .form {
   background-color: #fff;
-  margin: -150px 15px 0px 15px;
+  margin: -150px 5% 15px 5%;
   border-radius: 10px;
   color: #666;
   padding: 0px 0px;
@@ -199,7 +215,7 @@ body {
 .info {
   padding: 10px;
   height: auto;
-  /* width: auto; */
+  width: auto;
 }
 
 h1,

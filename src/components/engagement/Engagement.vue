@@ -11,5 +11,15 @@ export default {
 </script>
 
 <style scoped>
-
+iframe{
+  width: 100%;
+  height: 500px;
+}
+html,
+body {
+  height: fill;
+  margin: 0;
+  padding: 0;
+  background-color: #e0e0e0;
+}
 </style>

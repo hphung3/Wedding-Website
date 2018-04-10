@@ -50,14 +50,17 @@
 
       <label>Choose an option:</label>
       <v-checkbox
-      :label="`accepts (both ceremony and reception)`"
+
+      :label="`both ceremony and reception`"
       v-model="ceremonyAndReceptionCheckBox">
       </v-checkbox>
       <v-checkbox
-      :label="`accepts (reception only)`"
+
+      :label="`reception only`"
       v-model="receptionCheckBox">
       </v-checkbox>
       <v-checkbox
+
       :label="`regretfully declines`"
       v-model="declineCheckBox">
       </v-checkbox>
@@ -187,7 +190,7 @@ export default {
 html,
 body {
   height: 100%;
-
+  overflow: unset;
   margin: 0;
   padding: 0;
   background-color: #e0e0e0;
@@ -277,7 +280,7 @@ button:focus {
 }
 
 label {
-  display: block;
+
   margin-bottom: 10px;
   float: left;
 }
@@ -290,4 +293,5 @@ label {
 #full-name, #number-of-guests{
   width: 95%
 }
+
 </style>

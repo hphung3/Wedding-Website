@@ -20,18 +20,9 @@ export default {
     return {
       images: [
           {
-            id: 'wedding-portrait',
-            path: require('../../assets/wedding-portrait.jpg')
-          },
-          {
-            id: 'family-photo',
-            path: require('../../assets/family-photo.jpg')
-          },
-          {
-            id: 'family-photo-2',
-            path: require('../../assets/family-photo-2.jpg')
-          },
-
+            id: 'wedding-outside',
+            path: require("../../assets/wedding/wedding-couple-outside.jpg")
+          }
         ]
       
     }
@@ -42,6 +33,7 @@ export default {
 <style scoped>
   img{
     max-width:80%;
-    max-height:80%;
+    max-height:75%;
+    min-width: 50%;
   }
 </style>

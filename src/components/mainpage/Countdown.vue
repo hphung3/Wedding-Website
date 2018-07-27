@@ -30,16 +30,16 @@ export default {
   },
   computed:{
       days: function() {
-        return Math.trunc(((this.weddingDay - this.now) / 60 / 60 / 24 ))
+        return Math.trunc(((this.now - this.weddingDay) / 60 / 60 / 24 ))
       },
       hours: function() {
-        return Math.trunc(((this.weddingDay - this.now) / 60 / 60) % 24)
+        return Math.trunc(((this.now - this.weddingDay) / 60 / 60) % 24)
       },
       minutes: function() {
-        return Math.trunc(((this.weddingDay - this.now) / 60) % 60)
+        return Math.trunc(((this.now-this.weddingDay) / 60) % 60)
       },
       seconds: function() {
-        return (this.weddingDay - this.now) % 60
+        return (this.now - this.weddingDay) % 60
       },
   },
   filters: {
@@ -62,13 +62,15 @@ export default {
         padding-top: 1%;
         padding-left: 10%;
         padding-right:10%;
-        margin-bottom: 2%;
+        margin-bottom: 1%;
 
         grid-template-columns: repeat(4,25%);
         grid-template-rows: 30px 1fr;
 
         height: 60%;
         font-family: 'Ultra', serif;
+
+        min-width: 400px;
     }
 
     .header{
@@ -78,10 +80,10 @@ export default {
     .number{
         border-radius: 10%;
         background-color: #D0D0D0;
-        font-size: 2.5em;
-        padding: 10% 5%;
-        margin: 0 5%;
+        font-size: 3em;
+        margin: 0 20%;
         font-family: 'Ultra', serif;
+        min-width: 70px;
     }
 
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div id="title">Happily Married!</div>
     <countdown :date=date></countdown>
     <photoslide></photoslide>
   </div>
@@ -23,6 +24,10 @@ export default {
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -39,4 +44,10 @@ body {
   width: auto;
 }
 
+#title{
+  padding: 10px 0 0 0;
+  font-size: 4em;
+  min-width: 400px;
+  font-family: 'Great Vibes', cursive;
+}
 </style>

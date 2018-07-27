@@ -7,10 +7,14 @@
         <v-spacer></v-spacer>
         <v-toolbar-items>
           <router-link to="/engagement" id="engagement">
-            <v-btn flat class="engagement-video">Engagement</v-btn>
+            <v-btn flat class="engagement-tab">Engagement</v-btn>
           </router-link>
-          <router-link to="/rsvp" id="rsvp">
+          <!-- <router-link to="/rsvp" id="rsvp">
             <v-btn flat class="rsvp">RSVP</v-btn>
+          </router-link> -->
+
+          <router-link to="/wedding" id="wedding">
+            <v-btn flat class="wedding-tab">Wedding</v-btn>
           </router-link>
 
       </v-toolbar-items>
@@ -25,9 +29,14 @@
               <v-card-text class="rsvp-sm">Engagement</v-card-text>
             </router-link>
           </v-card>
-          <v-card>
+          <!-- <v-card>
             <router-link to="/rsvp" id="rsvp">
               <v-card-text class="rsvp-sm">RSVP</v-card-text>
+            </router-link>
+          </v-card> -->
+          <v-card>
+            <router-link to="/wedding" id="wedding">
+              <v-card-text class="rsvp-sm">Wedding</v-card-text>
             </router-link>
           </v-card>
         </v-expansion-panel-content>
@@ -82,7 +91,7 @@ a {
   text-decoration: none;
 }
 
-.engagement-video {
+.engagement-tab, .wedding-tab {
   font-weight: 700;
   font-size: 180%;
   padding: 10px 0px;
@@ -96,7 +105,7 @@ a {
   text-decoration: none;
 }
 
-#rsvp, #engagement {
+#rsvp, #engagement , #wedding{
   height: auto;
   text-decoration: none;
   align-content: center
@@ -113,5 +122,6 @@ a {
 .toolbar{
   width: auto;
 }
+
 
 </style>

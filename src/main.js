@@ -7,6 +7,7 @@ import App from './App.vue'
 import Meta from 'vue-meta'
 import VueRouter from 'vue-router'
 import engagement from './components/engagement/Engagement.vue'
+import wedding from './components/wedding/Wedding.vue'
 
 Vue.config.productionTip = false
 Vue.use(Vuetify)
@@ -17,7 +18,8 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', component: mainpage},
   { path: '/rsvp', component: rsvp},
-  { path: '/engagement', component: engagement}
+  { path: '/engagement', component: engagement},
+  { path: '/wedding', component: wedding}
 ]
 
 const router = new VueRouter({
@@ -30,6 +32,3 @@ const app = new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
-
-
-
